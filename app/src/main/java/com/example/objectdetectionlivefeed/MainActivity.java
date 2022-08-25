@@ -254,11 +254,8 @@ public class MainActivity extends AppCompatActivity implements ImageReader.OnIma
                         new ArrayList<>();
 
                 for (final Detector.Recognition result : results) {
-                    final RectF location = result.getLocation();
-                    if (location != null && result.getConfidence() >= minimumConfidence) {
-                        //cropToFrameTransform.mapRect(location);
-                        result.setLocation(location);
-                        mappedRecognitions.add(result);
+                    if (result.getConfidence() >= minimumConfidence) {
+                          mappedRecognitions.add(result);
                     }
                 }
 
